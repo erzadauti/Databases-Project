@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='img/Website Logo.png') }}" alt="BOOKed Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="books">Books</a></li>
+                    <li><a href="reviews">Reviews</a></li>
+                    <li><a href="imprint">Imprint</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="search-section">
+        <h1>Search for Books</h1>
+        
+        <form action="{{ url_for('search_books') }}" method="GET">
+            <div class="search-container">
+                <label for="search_term">Search by Title or Genre:</label>
+                <input type="text" id="search_term" name="search_term" required>
+                <button type="submit" class="initial-search-button">Search</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 BOOKed. All rights reserved.</p>
+    </footer>
+</body>
+</html>
